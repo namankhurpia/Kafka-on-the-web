@@ -1,4 +1,4 @@
-package com.namankhurpia.Kafkademo;
+package com.namankhurpia.Kafkademo.Models;
 
 import lombok.Data;
 
@@ -44,5 +44,16 @@ public class KafkaProperties {
      */
     HashMap<String,String> list;
 
+    public KafkaProperties( ) {
 
+    }
+
+    public KafkaProperties(String topicName, String bootstrapserver, String keySerializer, String valueSerializer, String idempotence, HashMap<String, String> list) {
+        this.topicName = topicName;
+        this.bootstrapserver = bootstrapserver;
+        this.keySerializer = keySerializer;
+        this.valueSerializer = valueSerializer;
+        this.idempotence = idempotence;
+        this.list = list;
+    }
 }

@@ -1,5 +1,7 @@
 package com.namankhurpia.Kafkademo;
 
+import com.namankhurpia.Kafkademo.Models.KafkaProperties;
+import com.namankhurpia.Kafkademo.Models.SendData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,9 +20,9 @@ public class Controller {
     }
 
     @GetMapping("/send")
-    public void sendWithoutAck(String data)
+    public void sendWithoutAck(@RequestBody SendData data)
     {
-
+        kafkaService.send(data);
     }
 
 }
